@@ -15,24 +15,29 @@ import json
 import webbrowser
 
 #Xtrend
-
+#桌面生成了一个文件夹用于存放.app文件，IpaPath的路径名中的Payload不要修改，否则可能会导致生成的ipa包无法安装
 IpaPath = '/Users/brain/Desktop/Payload'
 IpaBagPath = '/Users/brain/Desktop/ProgramBag'
+#对应.app文件所在磁盘的位置
 appFileFullPath ='/Users/brain/Library/Developer/Xcode/DerivedData/XTrend-ejxrvqekaehluefrlumkkxxihrpg/Build/Products/Debug-iphoneos/XTrend.app'
+#想要打出的ipa包的包名
 ipaName = "xtrend.ipa"
 
 
 #将此处打开的链接改为firim对应app的链接
 openUrl = 'https://fir.im/XTrend'
 type = "ios"
+#fir中对应该app的token
 api_token = "ee248d434929148de68a21a9d382e785"
 bundle_id = "com.bravely.xtrend"
 
+#上传的ipa包对应的参数
 name = "XTrend"
-version = "2.0.0"
-build = "2000"
+version = "2.1.1"
+build = "2110"
 changelog = "test auto ipa"+name+version+build
 
+#fir上传路径
 tokenUrl = 'http://api.fir.im/apps'
 
 #上传firim
@@ -146,6 +151,7 @@ if __name__ == '__main__':
     bulidIPA()
     #获取权限执行上传操作
     getUploadUrl(tokenUrl)
+    #打开下载链接
     openDownloadUrl()
 
 
